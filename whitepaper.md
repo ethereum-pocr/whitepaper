@@ -1,4 +1,4 @@
-*Author: Guénolé de Cadoudal - for Credit Agricole CIB (CACIB) and Skandinaviska Enskilda Banken (SEB) - 2022*
+*Author: Guénolé de Cadoudal - for Credit Agricole CIB (CACIB) and Skandinaviska Enskilda Banken (SEB) - 2023*
 
 # Proof of Carbon Reduction Whitepaper
 
@@ -11,7 +11,7 @@ This paper is not about discussing the history and background of blockchains, bu
 **Blockchain operators run consistently an IT system that respects a consensus algorithm because of their self interest in earning a crypto token they can sell to the highest bidder**.     
 This is the main incentive that enables the network of nodes to cooperate and create a resilient, censorless, decentralized cloud like infrastructure.
 
-In this paper we propose a new consensus for a new public blockchain that embeds an incentive to improve the ecological impacts of the underlying IT infrastructure.  
+In this paper we propose a new consensus for a new public blockchain that embeds an incentive to improve the climate impacts of the underlying IT infrastructure.  
 
 ## 1. The problem to solve
 
@@ -32,7 +32,7 @@ Ethereum has migrated its consensus to the `Proof of Stake` (the *Merge* in 2022
 
 Proof of Stake is indeed a huge progress, yet there is no incentive for the nodes to optimize their energy consumption and use computing hardware that search for sustainability.
 
-This whitepaper proposes a design for a new consensus that intends to incentivize the operators of nodes to select the best possible setup to run their system and enter into a competition for continuous improvement of their hardware, not only for the energy consumption but also in the ecological impact of the full lifecycle of the infrastructure they choose to use while producing the same service as an Ethereum public blockchain. 
+This whitepaper proposes a design for a new consensus that intends to incentivize the operators of nodes to select the best possible ITsetup to run their system and enter into a competition for continuous improvement of their hardware, not only for the energy consumption but also in the ecological impact of the full lifecycle of the infrastructure they choose to use while producing the same service as an Ethereum public blockchain. 
 
 **We call this consensus the `Proof of Carbon Reduction` or `PoCR`.**
 
@@ -40,9 +40,9 @@ This whitepaper proposes a design for a new consensus that intends to incentiviz
 
 Nodes will make efforts in improving the carbon footprint of their IT infrastructure if they are given a financial incentive to do so.   
 The **Proof of Carbon Reduction** consensus therefore aims at aligning the crypto token earning of a node operator with the quality of the carbon footprint of its infrastructure.   
-This implies that the nodes can proove the level of carbon emission of their infrastructure to the rest of the network in a trustable and public way.   
+This implies that the nodes can prove the level of carbon emission of their infrastructure to the rest of the network in a trustable and public way.   
 
-The PoCR consensus intends to put the nodes in competition for a better carbon footprint since **the lower the footprint, the higer the earning**, and the absence of progress on the carbon footprint would progressively reduce the earning as others becomes better.   
+The PoCR consensus intends to put the nodes in competition for a better carbon footprint such that **the lower the footprint, the higer the earning**, and the absence of progress on the carbon footprint would progressively reduce the earning as others becomes better.   
 
 The earning will be denominated in the native crypto token of this new public blockchain (the Carbon Reduction Coin, CRC, ₡) and therefore, like any other shared infrastructure, the tokens will gain a monetary value by the increased usage on the infrastructure. So the earning of a node will be higher if the node can demonstrate to be running with a better setup than other nodes.
 
@@ -51,69 +51,74 @@ We need to introduce here the notion of ranking of nodes based on the carbon foo
 The competition between the nodes will push the actors to favor better ecological equipments and progressively all nodes will be incentivized to improve their carbon footprint by getting these equipments. This global improvement should not stop the competition but set new challenges. When a node improve its footprint it can gain one or several places in ranking, earning more while the others start earning less. 
 Therefore, we can look at the set of nodes like a never ending race where gaining a place over someone else is already an improvement and simply participating is contibuting to the overall setup. 
 
-Will we reach a zero footprint impact ? If so we would have achieved something good : An IT infrastructure that has no negative impact on the planet !   
+Will we reach a zero footprint impact ? If so we would have achieved something good : An IT infrastructure that has no negative impact on the planet ! But we are not there yet...   
 
 Note that we should exclude carbon compensation scheme in the measurement of the node without preventing actors to compensate if they wish to do so. 
 
-Will the total carbon footprint of such a network be better than other blockchains ? This is difficult to state today and it will largely depends on the number of nodes (as the total impact is the sum of each node individual impact).    
-Will the total carbon footprint be better than a centralized system ? Maybe not, initially, but it offers a decentralized and business agnostic service that no centralized approach can offer. 
-
+Will the total carbon footprint of such a network be better than other blockchains ? This is difficult to state today and it will largely depends on the number of nodes (as the total impact is the sum of each node individual impact).     
+Will the total carbon footprint be better than a centralized system ? Maybe not, initially, but it offers a decentralized and business agnostic service that no centralized approach can offer.    
+In any cases, the base global carbon footprint is likely to be similar or smaller per nodes than a Proof of Stake or BFT consensus as it starts on the basis of a proof of authority.
 
 ## 3. Calculating the carbon footprint of a node
 
-Let's detail now how the carbon footprint of a node is estimated, recorded, shared in a trustable manner and usable to reward the node. 
+Let's detail now how the carbon footprint of a node is calculated, recorded and shared in a trustable manner and usable to reward the node. 
 
-An IT solution cannot (yet?) determines by itself the energy, $CO_2$ emmission, and other environmental factors that it has an impact on. Therefore the nodes will need to rely on the expertise of external parties to assess their infrastructure. 
+An IT solution cannot (yet?) determines by itself the energy, $CO_2$ emmission, and other environmental factors (water used, rare materials) that it has a need for. Therefore the nodes will need to rely on the expertise of external parties to assess their infrastructure. 
 
-First, the research suggests that a large part (50 to 70%) of the environmental impact of IT infrastructure comes from the construction and shipment of the hardware before it is even first used [Quote needed](). Another important part is linked to the management of the end of life of the equipments after it has been put out of use. So it is critical that the node assessment is done on the full lifecycle (construction, shipment, installation, usage, end of life) of the various parts that constitute a node : computer hardware, storage units, network appliances, cooling systems, electricity sources etc.
+First, the research suggests that a large part (30 to 40%) of the environmental impact of IT infrastructure comes from the construction and shipment of the hardware before it is even first used [according to greenit.fr report](https://www.greenit.fr/wp-content/uploads/2019/11/GREENIT_EENM_etude_EN_accessible.pdf). Another important part is linked to the management of the end of life of the equipments after it has been put out of use. So it is critical that the node assessment is done on the full lifecycle (construction, shipment, installation, usage, end of life) of the various parts that constitute a node : computer hardware, storage units, network appliances, cooling systems, electricity sources etc.
 
 Then, it is important that we can apply consistently the same assessment methodology across all nodes, across multiple data center and geography, and across time. Such a methodology must therefore be designed by experts in this field of the industry and follow a well recognized standard.   
 
-Typically, the carbon footprint of a node will be measured in "greenhouse gas" emissions with multi-criteria indicators following the [IPCC 100 years methodology](https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg1-chapter2-1.pdf) and the [Life cycle assessment](https://eplca.jrc.ec.europa.eu/lifecycleassessment.html) approach and be expressed in $kg.CO_2$ equivalent and in accordance with the ISO14040-44 standard.
+Typically, the carbon footprint of a node will be measured as a climatic impact indicator with multi-criteria indicators following the [IPCC 100 years methodology](https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg1-chapter2-1.pdf) and the [Life cycle assessment](https://eplca.jrc.ec.europa.eu/lifecycleassessment.html) approach and be expressed in $kg.CO_2$ equivalent and in accordance with the ISO 14040/44:2006 standard.
 
-The methodology defined for assessing the carbon footprint of a node is to be considered as a part of the whitepaper and must be adhered to by all nodes. The full documentation of the methodology is documented [here](tbd).
+The methodology defined for assessing the carbon footprint of a node is to be considered as a part of the whitepaper and must be adhered to by all nodes. The full documentation of the methodology is documented [here](./LCA%20assessment%20methodology%20-%20v1.0.pdf).
 
-The methodology is created by APL Data center and relies on the [NEGA OCTET](https://negaoctet.org/en/home/) database, a joint effort sponsored by the "Agence de l'Environnement et de la Maitrise de l'Energie" [ADEME](https://www.ademe.fr/en/frontpage/)
+The methodology is created by APL Data center and relies on the [NEGA OCTET](https://negaoctet.org/en/home/) database, a joint effort sponsored by the "Agence de l'Environnement et de la Maitrise de l'Energie" [ADEME](https://www.ademe.fr/en/frontpage/).
 
-**TO BE COMPLETED WITH THE METHOLOGY DEFINED BY APL NEUTREO**
+As an abstract, let's consider the below diagram.
 
-Since nodes themselves, as IT software cannot self assess their setup, since there are financial implications (the blocks rewards and transaction fees) in making this assessment, node owners cannot be trusted to self assess their nodes either. So external trustable parties, with at least their names at stake, should be entrusted to analyse the nodes setup.    
+<img src="./images/APL%20Methodology%20-%20figure%201.png" width="100%">
+
+A node operator, in charge of the IT infrastructure needed to run its node in the network, will identify and provide the listed inputs (Datacenter elements and IT Equipment data) to the Auditor. The Auditor will apply the allocation rules and the indicators from the environmental database (Nega Octet) to calculate the environmental impacts in terms of the four indicators ($C0_2$ emission, depletion of natural resources, primary energy consumption and water resource depletion). These indicators are then normalized and added together to form the Carbon Footprint of the node whose value has no unit but faciliate the comparison accross the nodes. 
+
+Since nodes themselves, as IT software cannot self assess their carbon footprint, since there are financial implications (the blocks rewards and transaction fees) in making this assessment, node owners cannot be trusted to self assess their nodes either. So external trustable parties, with at least their names at stake, should be entrusted to analyse the nodes setup.    
 As it is important to maintain, as much as possible, a distribution of roles and avoid unique actors and centralization, such parties must be multiple and remain independant and in competition. These parties will be refered to as `node auditors` or `carbon footprint node agencies` with a role similar to rating agencies in the financial sector. 
 
 These node auditors will be mandated by the node owner to assess their IT infrastructure and must follow the defined methodology and be in a position to demonstrate that the methodology has been followed. Once an assessment is done on a node, they will record in the Blockchain the carbon footprint of the node under their signature (i.e. making a blockchain transaction with their representative private key). 
 
-Given that the result of an audit is a fixed number (a carbon footprint express in $g.CO_2^{eq}$), nodes operators may find convenient to not perform audit of theit IT infrastructure often enough. Although, not re auditing a node let other nodes operators better their setup and receive better reward, it appears useful to incentivize further the node operators to regularly audit their node. The consensus therefore apply a penalty on the node that have not been audited for some time. See section 5.1.
+Given that the result of an audit is a fixed number (a carbon footprint indicator), nodes operators may find convenient to not perform audit of theit IT infrastructure often enough. Although, not re auditing a node let other nodes operators better their own setup and receive better reward, it appears useful to incentivize further the node operators to regularly audit their node. The consensus therefore apply a penalty on the node that have not been audited for some time. See section 5.1.
 
-Only conformant auditors will be authorized to record the result of an audit in the chain. The community of node owners have the possibility to vote in or out an auditor with a majority + 1. Auditors will be encouraged to review the audits of their peers and expose any wrong doing.    
-In order to futher enforce auditors quality auditors have to set an amount of crypto token at stake before being allowed to record the result of an audit.    
+Only conformant auditors will be authorized to record the result of an audit in the chain. The community of node owners have the possibility to vote in or out an auditor with a majority + 1. Auditors will be encouraged to review the audits of their peers and expose any wrong doing as they are in competition with each other with the nodes as customers.    
+In order to futher enforce auditors quality auditors have to set an amount of crypto tokens at stake before being allowed to record the result of an audit.    
 If an auditor is voted out by nodes it will loose all it's stake.    
 If an auditor decides to redeem its stake, it can only do so only after a period of 3 months (1 971 000 blocks) following it's last audit, giving enough time for external actors to eventually control and expose the auditor.    
 The amount at stake is function of the number of audits performed, the time since the audit to also act as a "capital requirement" for the auditor to perform its duties (see following sections). 
 
 Node owners identity will have to be publicly known and be transparent to the community. They cannot be also auditors as it would possibly create a conflict of interests.   
 The identity of the node owners should be known because the auditors will need to collect documentation and data and ensure that these are the actual figures of the nodes. 
-The identity of the node owners are also expected to be public to enable public display of the nodes activities and the origin of the crypto token created. Finally, as we will see in the next section the identity of the nodes will be important to decide allowing a new member in the group of block builders. 
+The identity of the node owners are also expected to be public to enable public display of the nodes activities and the origin of the crypto token created. Finally, as we will see in the next section the identity of the nodes will be important to decide allowing a new member in the group of block builders. Although not a technical requirements, nodes are expected to only approve new nodes that are companies under supervision by a regulatory body.
 
 ## 4. Deriving from the proof of authority consensus
 
 This new blockchain wants to offer an alternative to the market by being a public "greener blockchain" that has also a good throughput compare to existing public blockchains. The financial sector, in particular, and many large corporate businesses are looking for such a blockchain since they have taken ESG commitments and they cannot afford to have their name linked to an energy intensive infrastructure.     
-In addition, they are regulated and must be in a position to respect Anti Money Laudering and Counter Terrorism Financing rules and therefore need a crypto token which source is tracable. The regulated markets have difficulties to accept working on public infrastructures where the crypto token can fuel unknown actors that would potentially be suject to sanctions or linked to illegal activities. Therefore, there is a need for an open public infrastructure, yet cleared from disqualified actors for these sectors of businesses.   
+In addition, they are regulated and must be in a position to respect Anti Money Laudering and Counter Terrorism Financing rules and therefore need to be in a position to demonstrate they are using a crypto token which source is tracable.   
+The regulated markets have difficulties to accept working on public infrastructures where the crypto token can fuel unknown actors that would potentially be suject to sanctions or linked to illegal activities. Therefore, there is a need for an open, public, shared, non centralized infrastructure that only involves "regulatory conformant" actors .   
 
 The `proof of authority` consensus is designed to only allow a known set of nodes to create blocks. In particular the [clique](https://eips.ethereum.org/EIPS/eip-225) implementation proposed in EIP 225 of the Ethereum community, defines a replacement for the `proof of work` consensus that would be a good base to implement the `proof of carbon reduction` consensus.
 
-In the clique consensus, nodes are identified by an ethereum address corresponding to the private key with which they will sign their blocks. Nodes do not receive rewards for creating blocks and they are not put in competition. The list of authorized nodes (addresses) are simply requested to create blocks, in turn, at a regular frequency. They are called `sealers` in this consensus as they simply apply their signature on a block. The other nodes receiving this newly created block will verify that the block is valid and that the sealer is legit, before adding it into their copy of the chain. If the next expected sealer did not send a block in the given timeframe, any block is allowed to take its place, ensuring redundancy in case of a node failure.
+In the clique consensus, nodes are identified by an ethereum address corresponding to the private key they will sign their blocks with. Nodes do not receive rewards for creating blocks and they are not put in competition. The list of authorized nodes (addresses) are simply requested to create blocks, in turn, at a regular frequency. In this consensus, nodes are called `sealers` as they simply apply their signature on a block. The other nodes receiving this newly created block will verify that the block is valid and that the sealer is legit, before adding it into their copy of the chain. If the next expected sealer did not send a block in the given timeframe, any node is allowed to take its place, ensuring redundancy in case of a node failure.
 
 At the genesis of the chain, a single sealer is enough. It can allow new sealers in the consensus by voting in its address. Each new sealer needs to be voted in by at least $N/2 + 1$ existing sealers, $N$ being the total number of authorized sealers. Similarly, a node that is not acting appropriately in the consensus can be voted out by at least $N/2 + 1$ nodes to be excluded from the consensus.
 
-To ensure that a node cannot seal a long consecutive set of blocks, and control the chain, there is a rule in clique that prevents a sealer to seal another block until at least $N/2$ blocks have been sealed. So in a 10 nodes setup, node #1 will at best be able to seal block $X$ then at the earliest block $X+10/2 = X+5$.
+To ensure that a node cannot seal a long consecutive set of blocks, and control the chain, there is a rule in clique that prevents a sealer to seal another block until at least $N/2$ blocks have been sealed. So in a 10 nodes setup, node `#1` will at best be able to seal block $B$, then at the earliest block $B+10/2 = B+5$.
 
-We would reuse this behaviour and give a financial reward to the sealers making blocks based on their carbon footprint quality and on the number of nodes involved. The reward should deliver an incentive to improve their individual carbon footprint and at the same time give ensuring that accepting more nodes in the the consensus is not penalizing to avoid a too small group of nodes. Finally, once sufficient activity has peaked up on the platform the transaction fees should replace the block reward to limit the crypto currency creation to a predictable amount.
+We would reuse this behaviour and give a financial reward to the sealers making blocks based on their carbon footprint ranking and on the number of nodes involved. The reward should deliver an incentive to improve their individual carbon footprint and at the same time should ensure that accepting more nodes in the the consensus is not penalizing any node, to avoid a too small group of nodes. Finally, once sufficient activity has peaked up on the network the transaction fees should replace the block reward to limit the crypto currency creation to a predictable amount.
 
-On this last element, controlling the block reward level based on the chain activity, means here to use the transaction fees as an alternate source of earning. The Bitcoin network has taken the view that progressive usage of the network will enable the halving of the block reward while maintaining enough miner reward with the tx fees. Ethereum consensus (prior to proof of stake) has a more interventionist policy on the block reward (difficulty bombs).
+On this last element, controlling the block reward level based on the chain activity, means here to use the transaction fees as an alternate source of earning. The Bitcoin network has taken the view that progressive usage of the network will enable the halving of the block reward while maintaining enough miner reward with the tx fees. Ethereum consensus (prior to proof of stake) has a more interventionist policy on the block reward (e.g. difficulty bombs).
 
 ## 5. Calculating the reward of a node and the incentive scheme (Tokenomics)
 
-Based on the above discussion, the reward of block `b` for a node `n` will be made up of 3 parts to control the 3 incentives: 
+Based on the above discussion, the reward of block `b` for a node `n` will be made up of 3 parts to control the 3 incentives, a minimum token creation and the transaction fees: 
 
 $$ SealingReward(n,b) = CarbonReduction(n) * AcceptNewSealers() * GlobalInflationControl(b) $$
 
@@ -122,12 +127,12 @@ $$ Reward(n, b) = Max(SealingReward(n,b),MinReward()) + TransactionFees(b, n) $$
 ### 5.1. Ranking the nodes based on their `Carbon Footprint`
 
 As seen above each of the nodes have to have been audited to receive a reward in participating to the consensus.   
-Without an auditor setting the carbon footprint, $F_a(n)$, then $F_a(n)=0$. This value comes from the governance smart contract. Together with this value, the block at which the audit was done is also recorded and it will be refered to by $B_F(n)$.
+Without an auditor setting the carbon footprint, $F_a(n)$, then $F_a(n)=0$. This value comes from the governance smart contract and is set bt the auditor as part of the audit process. With this value, the block at which the audit was recorded is also stored and it will be referred to by $B_F(n)$.
 
 In order to apply a penalty on nodes that are not regularly audited (once a year), the carbon footprint actually used for the rest of the consensus is adjusted by applying a 5% increase per years without audit.
 
 $$ N_{year}(n) = {b - B_F(n) \over (3600 / 4) * 24 * 365}$$
-Where $b$ is the current block number, the divider represents a year worth of blocks and the division used is the euclidian integer division. Then,
+Where $b$ is the current block number, the divider represents a year worth of blocks and the division used is the euclidian integer division, implying that less than a year gives $N_{year}(n) = 0$. Then,
 $$F(n) = F_a(n) . { 100 + 5.N_{year}(n) \over 100} $$
 
 
@@ -138,14 +143,14 @@ $$ R(n) = \sum_{k=1}^N l_k(n) $$
 Where $l_k(n) = 1$ when $F(k) < F(n)$ and $l_k(n) = 0$ when $F(k)≥F(n)$ or $F(k) = 0$.  
 
 With this formula, the best node (the one with the best carbon footprint) will have $R(n) = 0$ since no other node has a better $F(k)$ than $F(n)$, the next node will have $R(n)=1$ and the last $R(n)=N-1$, $N$ being the number of nodes with a positive carbon footprint.   
-If there are equality between $p$ nodes they will have the same rank $r$ but the one following them will have the rank $r+p$ and not $r+1$.
+If there are equality between $p$ nodes they will have the same rank $r$ but the one directly following them will have the rank $r+p$ and not $r+1$.
 
-To be noted that the value $F(n)$ is a positive number (any carbon compensation setup would be ignored and an assessment of carbon footprint that would be negative wouldn't make sense). A node with a zero carbon footprint is considered having not been audited and will not be included in the ranking not it will receive any reward as a consequence.
+To be noted that the value $F(n)$ is a positive number (any carbon compensation setup would be ignored and an assessment of carbon footprint that would be negative wouldn't make sense). A node with a zero carbon footprint is considered having not been audited and will not be included in the ranking nor will it receive any reward as a consequence.
 
 ### 5.2. The `CarbonReduction` base reward
 
-The above ranking logic is to place a node in a cohort of nodes based on the quality of its carbon footprint (a value expressed in grams of $CO_2$ eq. with no decimals).   
-The node with a very good carbon footprint should be receiving a larger premium than one with a good one who in turn receives a better premium than some node with a average or even bad footprint. The intention is not to make this additional footprint linear since in technology, additional important breakthrough are often much more difficult to get than incremental improvement. Therefore a $f(r) = ⍺^r, 0 < ⍺ < 1$ curve seams adhequate (the lower the higher, the larger the smaller), and $r ∈ ℕ$, is the rank $R(n)$ of the node in the cohort with integer values in $R(n) ∈ [0, N-1]$ and $N$ is the number of nodes.
+The above ranking logic places each node in a cohort of nodes based on the quality of its carbon footprint (a value expressed in integer with no unit with no decimals).   
+The node with a very good carbon footprint should be receiving a larger premium than one with a good one who in turn receives a better premium than some node with a average or even bad footprint. The intention is not to make this additional footprint linear since in technology, important breakthrough are often much more difficult to get than incremental improvement. Therefore an exponential decay curve $f(r) = ⍺^r$ seams adequate, where $0 < ⍺ < 1$ and $r ∈ ℕ$, is the rank $R(n)$ of the node $n$ in the cohort with integer values $R(n) ∈ [0, N-1]$ and $N$ is the number of nodes.
 
 We define the Carbon Reduction Factor, $CRF(n)$, as 
 
@@ -155,36 +160,36 @@ We set $⍺=0.9$ as an assumption that the number of nodes in the network will b
 
 <img src="./images/CRF-function-2.png" width="100%">
 
-In the diagram, the abcisse axe shows the rank $R(n)$, and displays two other options with $⍺=0.8$ and $⍺=0.95$ .   
+In the diagram, the abscissa axe shows the rank $R(n)$, and displays two other options with $⍺=0.8$ and $⍺=0.95$. The ordinate axe show the result of $⍺$ raised at the power of $R(n)$.     
 
 Since $R(n) ∈ ℕ$, $0.9^{R(n)}$ can be calculated as a quotien of integers as follow
 
 $$ 0.9^{R(n)} = {{9^{R(n)}} \over {10^{R(n)}}} $$
 
-To ensure rounding as late as possible in the computer calculation and applying the [Euclidian division](https://en.wikipedia.org/wiki/Euclidean_division). Also, the calculation can be pre-calculated or cached as it does not depends on the current block.
+To ensure rounding as late as possible in the computer calculation and applying the [Euclidian division](https://en.wikipedia.org/wiki/Euclidean_division). Note, the calculation can be pre-calculated or cached as it does not depends on the block number.
 
 Finally, with $₡$ representing a unit of Carbon Reduction Coin 
 $$CarbonReduction(n) = CRF(n) * 1 ₡$$
 
 ### 5.3. The `AcceptNewSealers` factor
 
-Here the logic is to provide the early adopter nodes to get an incentive to accept new nodes n the consensus.    
-With the proof of authority consensus, each allowed nodes are expected to seal a block in a round robin way (each in turn). So, given that the blocks are created every $s$ seconds (initially set to 4 seconds) it means that when new nodes are brought into the game, the average reward per unit of time will drop for the existing nodes.   
+Here the logic is to give to the early joiner nodes to get an incentive to accept new nodes n the consensus.    
+With the proof of authority consensus, each allowed nodes are expected to seal a block in a round robin way (each in turn). So, given that the blocks are created every $s$ seconds (set to 4 seconds in this whitepaper) it means that when new nodes are brought into the game, the average reward per unit of time will drop for the existing nodes.   
 
-A node $n$ within $N$ nodes will in average earn $x₡$ every $N$ blocks or $x/N$ per $s$ seconds.  
+A node $n$ within $N$ nodes will earn $x₡$ every $N$ blocks or $x/N$ per $s$ seconds.  
 
 When a new node is added into the consensus, the total number of nodes becomes $N+1$ and the the node $n$ will now earn $x/(N+1)$ per $s$ seconds . 
 
-Therefore the node loses in average $x * [1/N - 1/(N+1)]$ per block when the network moves from $N$ nodes to $N+1$ nodes. 
+Therefore the node loses $x * ({1 \over N} - {1 \over {N+1}})$ per block when the network moves from $N$ nodes to $N+1$ nodes. 
 
-Adding yet another node (total $N+2$ nodes), node $n$ will now earn $x * 1/(N+2)$, loosing $x * [ 1/N - 1/(N+2) ]$ per block compared to when the network has $N$ nodes. 
+Adding yet another node (total $N+2$ nodes), node $n$ will now earn $x * 1/(N+2)$, loosing $x * ({1 \over N} - {1 \over {N+2}})$ per block compared to when the network has $N$ nodes. 
 
-A node needs to earn a fixed amount per unit of time as its operating costs will be stable in time regardless of the number of nodes. Since the earning is only delivered when the node seals a block, the block reward should deliver the same quantity independantly of the number of nodes. So $E_N(n, b)$ being the earning of node $n$ at block $b$ with $N$ nodes
+A node needs to earn a fixed amount per unit of time as its operating costs will be stable in time regardless of the number of nodes. Since the earning is only delivered when the node seals a block, the block reward should deliver the same quantity independantly of the number of nodes. So $E_N(n, b)$ being the earning of node $n$ at block $b$ with $N$ nodes we have the equality
 
-$$ E_N(n, b) == E_{N+k}(n,b) $$
-$$ { AcceptNewSealers()*x \over N} == { AcceptNewSealers()* x \over {N+k}} $$
-This is only possible if $ AcceptNewSealers()$ is the actual number of nodes
-$$ { N*x \over N} == { (N+k)* x \over {N+k}} $$
+$$ E_N(n, b) = E_{N+k}(n,b) $$
+$$ \equiv { AcceptNewSealers_N()*x \over N} = { AcceptNewSealers_{N+k}()* x \over {N+k}} $$
+This is only possible if $AcceptNewSealers()$ is the actual number of nodes $N$ and $N+k$
+$$ \equiv { N*x \over N} = { (N+k)* x \over {N+k}} $$
 
 Conclusion:
 
@@ -192,26 +197,26 @@ $$ AcceptNewSealers() = N $$
 
 ### 5.4. The `GlobalInflationControl` factor
 
-As said the bitcoin network proposes a halving mechanism that divide by 2 the earning every fixed amount of blocks and therefore cap the total number of bitcoins ever created.
+As said previously, the bitcoin network proposes a halving mechanism that divide by 2 the earning every fixed amount of blocks and therefore cap the total number of bitcoins ever created.
 
-This scheme has a lot of benefits but two inconveniences we wish to cover in this consensus.
+This scheme has a lot of benefits but two inconvenients we wish to cover in this consensus.
 
-First, at the time of the halving, miners suddently receive half of the earning creating an economic incentive to either increase the bitcoin resell price or stop mining as the earning becomes lower. To resolve this we put in place a continuous 'halving' or better named 'reduction factor'. Also, the bitcoin uses the number of blocks as a measure of monetary creation because the bitcoin creation is fixed per block. In the Proof of Carbon Reduction consensus the quantity of CRC is not fixed per bloc but depends on several factors (number of nodes, ranking of the nodes). So we prefer the quantity of created CRC as a control of the reduction factor.
+First, at the time of the halving, miners suddently receive half of the earning creating an economic incentive to either increase the bitcoin resell price or stop mining as the earning becomes lower. To resolve this we put in place a 'continuous halving' or better named 'reduction factor'. Also, the bitcoin uses the number of blocks as a measure of monetary creation because the bitcoin creation is fixed per block. In the Proof of Carbon Reduction consensus the quantity of CRC is not fixed per bloc but depends on several factors (number of nodes, ranking of the nodes). So we prefer using the quantity of created CRC as a control of the reduction factor.
 
-The second element is the consequences of lost bitcoins that can never be retrieved (sent b mistake to address without private key, lost private key of address with bitcoins ...). This reduces in practice the actual quantity of bitcoin in circulation. To resolve this we put in place a 'minimum CRC creation' that will compensate for the statistical destruction of CRCs.
+The second element is the consequences of lost bitcoins that can never be retrieved (sent by mistake to address without private key, lost private key of address with bitcoins ...). This reduces in practice the actual quantity of bitcoin effectively in circulation. To resolve this we put in place a 'minimum CRC creation' that will compensate for the statistical destruction of CRCs.
 
-In bitcoin the reward $R_B$ for the bloc $B$ is defined by 
+1. In bitcoin, the reward $R_B$ for the bloc $B$ is defined by 
 
-$$ R_B = { 50 \over 2^{B÷210,000} } = 50 * f_B $$
+$$ R_B = 50 *{ 1 \over 2^{B÷210,000} } = 50 * f_B $$
 
-Where $÷$ symbol represented the integer division so that below 210,000 $B÷210,000 = 0$ and $220,000÷210,000 = 1$ etc.
+Where $÷$ symbol represented the integer euclidian division so that below 210,000 $B÷210,000 = 0$ and $220,000÷210,000 = 1$ etc.
 
 Similarly, in the Proof of Carbon Reduction consensus the reduction factor at block $B$ is calculated as 
 
 $$ f_{b+1} = {1 \over { 2^{M_b / {10^6 } } }}$$
 
 Where $/$ symbol is the continuous division and $M_b$ the quantity of CRC created at block $b$.   
-Because in computing processing the continuous division produces floating values that depending on implementation language, compilers and processors may not gives exactly the same rounding it is not possible to ensure consistent results accross all nodes and therefore validate the blocks efficiently. So to cover this issue, we will use the limited development formula of the $e^x$ function adjusted for $2^x$.
+Because in computing calculation the continuous division produces floating values that depending on implementation language, compilers and processors may not gives exactly the same rounding, it is not possible to ensure consistent results accross all nodes and therefore validate the blocks efficiently. So to cover this issue, we will use the limited development formula of the $e^x$ function adjusted for $2^x$.
 
 <img src="./images/reduction-factor.png" width="100%">
 
@@ -221,7 +226,7 @@ $$ f_{b+1} = {1 \over { { 1 + { 0.72M_b \over 10^6} + { [{0.72M_b \over 10^6}]^2
 
 Simulation shows that with this regime it will take 20 years to reach 10 million ₡ with 35 nodes, most joining in the first 5 years. 
 
-To cover for the *Irretrievably Lost* tokens ([estimated at 4% of the total supply every year](https://static1.squarespace.com/static/5d580747908cdc0001e6792d/t/5e98dde5558a587a09fac0cc/1587076583519/research+note+4.17.pdf) in bitcoin) we propose to set a minimum cap at 100 000 ₡ per year or 0,01268... ₡ per block that represents 1% of the 10M₡. 
+2. To cover for the *Irretrievably Lost* tokens ([estimated at 4% of the total supply every year](https://static1.squarespace.com/static/5d580747908cdc0001e6792d/t/5e98dde5558a587a09fac0cc/1587076583519/research+note+4.17.pdf) in bitcoin) we propose to set a minimum cap at 100 000 ₡ created per year or 0,01268... ₡ per block that represents 1% of the 10M₡. 
 
 Finally:
 
@@ -233,7 +238,7 @@ The chart represents the total amount of crypto created by years with 30 nodes j
 
 <img src="./images/crypto-total-2.png" width="400px">
 
-In the implementation of the consensus it is necessary to so store the total quantity of CRC generated after each block to have the value $M_b$ in the formula of $f_{b+1}$.   
+In the implementation of the consensus it is necessary to store the total quantity of CRC generated after each block to have the value $M_b$ in the formula of $f_{b+1}$.   
 This information is stored in the chain state at address `0x0000000000000000000000000000000000000101` and key `keccak256('GeneratedPocRTotal')` = `0x7811a2bc735fc5403fbfc32e2acc5672667b529348616ff7d9fbcfb25c7d529a`.    
 Thanks to this storage the CRC is part of the state and therefore secured in the state root (the root hash that is part of the block header). Also, any blockchain observer is able to read the current quantity of CRC.
 
@@ -245,11 +250,11 @@ Transactions on the network are paid in CRC according to their computing and sto
 
 The user's wallet is debitted of the $TxFee$ and the sealer of the block including that transaction receives the $TxFee$ (modulo the evolution of the EIP-1559 that is potentially applicable on the network).
 
-So the $TxFee$ acts as a complementary earning for the searlers, and when the sealing reward decrease the sum of $TxFee$ should progressively replace the sealing reward. 
+So the $TxFee$ acts as an additional earning for the searlers, and when the sealing reward decrease the sum of $TxFee$ should progressively replace the sealing reward. 
 
-If the $TxFee$ is given as is to the sealers, then there will be no earning difference between sealers according to the quality of their carbon footprint. This will strongly impair the principal competition incentive of the Proof of Carbon Reduction network.
+If the $TxFee$ is given as spent to the sealers, then there will be no earning difference between sealers according to the quality of their carbon footprint. This will strongly impair the principal competition incentive of the Proof of Carbon Reduction network.
 
-To maintain the incentive the sealer will only receive $T_n(t)$ a portion of the $TxFee$ for transaction $t ∈ ℕ$ corresponding to its ranking $R(n)$ at the previous block.
+To maintain the incentive the sealer $n$ will only receive $T_n(t)$ a portion of the $TxFee$ for transaction $t ∈ ℕ$ corresponding to its ranking $R(n)$ as at the previous block.
 
 $$ T_n(t) = TxFee(t) * CRF(n)$$
 
@@ -267,7 +272,7 @@ Unlike the bitcoin network, there will be not hard stop of producing the crypto 
 
 The CRC tokens have the intrinsec value the blockchain users will give. The purpose of the CRC is to be an utility token for paying the services of the decentralized infrastructure offered by the blockchain network.
 
-The capacity of the network will be limited by the maximum number of transactions such clique based network can accept in a given period of time. Based on similar setup (Binance Smart Chain) that can reach 340 transaction/s (TPS) or [~30M transactions per day](https://bscscan.com/chart/tx) with a block limit of [119 MGas](https://bscscan.com/chart/gaslimit) and a block time of 3 secs.   
+The capacity of the network will be limited by the maximum number of transactions such PoA based network can accept in a given period of time. Based on similar setup (Binance Smart Chain) that can reach 340 transaction/s (TPS) or [~30M transactions per day](https://bscscan.com/chart/tx) with a block limit of [119 MGas](https://bscscan.com/chart/gaslimit) and a block time of 3 secs.   
 
 With the PoCR Network, that has a 4 sec block time and 119 MGas limit (set in the genesis block), we could be in a position to reach **~255 TPS** or **22M transactions per day**.
 
@@ -284,8 +289,8 @@ Node operators should however be carefull not to bring the price of gas too high
 
 If the user's demand for transactions goes above the capacity of the network, there will be competition between the users to get their transaction in the blocks and this is going to increase the gas price proposed by the users, as sealers will prioritize transactions with the highest fee. This will push the CRC price up due to demand being higher than offer up to the point where the price will be too high to equal the intrinsec value of the service (and user will turn to an alternate solution).
 
-Speculation is another element that influence the market price of an asset and crypto tokens have been subject to this influence. At the time of writing the whitepaper it is the intention of the authors to minimize the impact of the speculation on the price, but it is understood that speculation provides a service to any market (liquidity, risk transfer) but too much speculation will impair the users and sealers in the network. The CRC is not intented to be an investment asset (unlike BTC or ETH have become) but the authors wish to maintain the CRC as a utility token which price measures the value of the blockchain service.   
-At the launch of the network, the initial sealers do not intend to provide CRC to exchanges to keep some influence on the price, but as soon as the network grow it will become necessary for the sealers and users to have a market place to sell and buy the CRC between them and speculation may arise.
+Speculation is another element that influence the market price of an asset and crypto tokens have been subject to this influence a lot (too much). At the time of writing the whitepaper it is the intention of the authors to minimize the impact of the speculation on the price, but it is understood that speculation provides a service to any market (liquidity, risk transfer) but too much speculation will impair the users and sealers in the network. The CRC is not intented to be an investment asset (unlike BTC or ETH have become) but the authors wish to maintain the CRC as a utility token which price measures the value of the blockchain service.   
+At the launch of the network, the initial sealers do not intend to provide CRC to exchanges to keep some influence on the price, but as soon as the network grows it will become necessary for the sealers and users to have a market place to sell and buy the CRC between them and speculation may arise.
 
 The monetary policy of the CRC is not defined by any particular actor. It is initially set in this whitepaper, as a starting point based on hypothesis and the experience of other networks, but the distributed governance of the network (defined in the following sections) can decide changes in particular the following parameters
 
@@ -298,9 +303,9 @@ The genesis of the project is the constitution of a blockchain that can serve th
 
 The blockchain, based on the Proof of Carbon Reduction consensus, as described above, has the potential of being usefull for many other use cases where sustainability is an important requirement. Also, the bond being issued will need to live its entire life onchain for 3 to 5 years which leads to the need to have the network last long enough.
 
-In the long run, it is probably not the role of banks to be running the blockchain infrastructure but more probably to be a user of such a shared infrastructure.
+In the long run, it is probably not the role of banks to be running the blockchain infrastructure but more probably to simply be users of such a shared infrastructure.
 
-Initially setup 2 banks, the network will have 4 nodes in the consensus. Being based on a proof of authority scheme, the first node will need to be hard coded in the genesis block then the other invited. The second one by the first one; the third one by the 2 first ones ( $1/2 + 1$ ); the 4th one by at least 2 ( $3/2 +1$ ) of the 3 nodes; and so on with a logic of node N+1 being accepted by at least $N/2+1$ nodes.
+Initially setup with 2 banks, the network will have 4 nodes in the consensus. Being based on a proof of authority scheme, the first node will need to be hard coded in the genesis block then the other invited. The second one by the first one; the third one by the 2 first ones ( $1/2 + 1$ ); the 4th one by at least 2 ( $3/2 +1$ ) of the 3 nodes; and so on with a logic of node N+1 being accepted by at least $N/2+1$ nodes.
 
 Therefore a node willing to enter the consensus will need to make itself known to the community (see chapter 10) and get approved by at least half of the community.    
 
@@ -316,27 +321,26 @@ When an auditor wants to be granted the possibility to perform an audit, it will
 
 An auditor enlisted can be excluded by the community if at least $N/2 + 1$ nodes decide to vote its address out at any point. Only nodes that have been audited and that have a carbon footprint can vote. Nodes can vote only once per auditors but can change their vote at any time. When the auditor has been voted away by at least $N/2+1$ nodes it is excluded from the authorized list making its capacity to set carbon footprint for nodes impossible.
 
-An auditor can capture the carbon footprint of a node if it has pledged in the PoCR governance smart contract a minimum amount of crypto unit as a guarantee to the community that any misconduct can be sanctionned. When voted out an auditor cannot take its pledge away. An auditor can take its pledge away if it has not done an audit for more than 3 months (1 971 000 blocks at 4sec per block $= Span$ ).    
-The amount that an auditor has to pledge should be substantial but also linked to the liability the auditor is taking. At the inception, since there is no crypto created yet, the amount should be preallocated to the first auditor (in the genesis block). An amount of $M_0 = 5.000 ₡$ that should be secured for any new node assessment. The minimum amount necessary will decrease proportionally with the age of the last audit for the following 3 months. Technicaly, If the auditor has last audited a node at the block $B$ and had an existing  pledge $M$, when it wants to audit a node at block $B+\delta$ then it must have at least 
+An auditor can capture the carbon footprint of a node if it has pledged in the PoCR governance smart contract a minimum amount of crypto unit as a guarantee to the community that any misconduct can be sanctionned. When voted out an auditor cannot take its pledge back. An auditor can take its pledge back if it has not done an audit for more than 3 months (1 971 000 blocks at 4sec per block $= Span$ ).    
+The amount that an auditor has to pledge should be substantial but also linked to the liability the auditor is taking. At the inception, since there is no crypto created yet, the amount should be preallocated to the first auditor (in the genesis block).     
+A minimum amount $M_0 = 5.000 ₡$ should be secured for any new node assessment. The minimum amount necessary will decrease proportionally with the age of the last audit for the following 3 months. Specifically, if the auditor has last audited a node at the block $B$ and had an existing  pledge $M$, when it wants to audit a node at block $B+\delta$ then it must have at least 
 
-$$ P = M * (1 - {\delta \over Span}) + M_0 $$ 
+$$ P = M * (1 - {\delta \over Span}) + M_0 ; \space when \space \delta < Span$$ 
 
-when $\delta < Span$, or 
+$$P = M_0 ; \space when \space \delta > Span$$ 
 
-$$P = M_0 $$ 
-
-otherwise. Once this new audit is done $B$ becomes $B+\delta$ and $M$ becomes $P$ and the next audit will follow the same logic.    
+Once this new audit is done $B$ becomes $B+\delta$ and $M$ becomes $P$ and the next audit will follow the same logic.    
 
 This scheme implies that to satisfy an increasing number of clients over the same period of 3 months the auditor must pledge a larger amount. This designs a sort of "capital requirement" for the auditor that increase with the frequency of audit and therefore the quantity of business it does.      
 
-The below diagram represents an example where an auditor perform several audits (▲) over a period of 5 million blocks. The red line shows how the minimum pledge amount evolves over time. For instance, at block 4 700 000 the pledge was fully amortized so the minimum amount is only 5.000 ₡ and the auditor was able to redeem its pledge before performing the next audit. Then, for instance, at block 500 000, because of previous audit the pledge amount is 5 000₡ since block 50, then the minimum pledge calculates as $ 8.731₡ = 5.000₡ * (500000-50)/ 1971000 + 5.000₡ $, hence the auditor only needs to add 3.731₡ to be able to perform the next audit.
+The below diagram represents an example where an auditor perform several audits (▲) over a period of 5 million blocks. The blue bars represents the amount pledged at the block. The red line shows how the minimum pledge amount evolves over time. For instance, at block 4 700 000 the pledge was fully amortized so the minimum amount is only 5.000 ₡ and the auditor was able to redeem its pledge before performing the next audit. Another instance, at block 500 000, because of previous audit the pledge amount is 5 000₡, since block 50, then the minimum pledge calculates as $ 8.731₡ = 5.000₡ * (500000-50)/ 1971000 + 5.000₡ $, hence the auditor only needs to pledge an additional 3.731₡ to be able to perform the next audit.
 
 <img src="./images/auditor-pledge.png" width="100%">
 
 When an auditor is excluded by the community, the amount pledged by that auditor is confiscated. The community of nodes can decide to use the funds confiscated by the excluded auditors as they see fit by voting at $N/2+1$ like in a multi-sig wallet.
 
 ### 8.3 Changes requests "Carbon Reduction Improvement Proposals"
-Change in the consensus or the governance model can be agreed by the community by first having the change documented in the form of a memorandum posted in the community tool at https://github.com/ethereum-pocr/CRIPs (via pull request) and voted upon (positive or negative) by a majority +1 of voting nodes and a majority + 1 of voting auditors. 
+Change in the consensus or the governance model can be agreed by the community by first having the change documented in the form of a memorandum posted in the community tool at https://github.com/ethereum-pocr/CRIPs (via pull request) and voted upon (positive or negative) by a majority +1 of voting nodes and a majority +1 of voting auditors. 
 
 Both communities (nodes and auditors) should express their approval independantly to prevent changes that penalize one community against the other. 
 
@@ -347,30 +351,30 @@ Changes will be published as CRIP (Carbon Reduction Improvement Proposal) in a f
 
 Important note: the consensus as defined in this whitepaper is not limiting implementation to any language or platform as to avoid concentration of responsibility and power. The below description intends to show the initial implementation.
 
-The proposal is to use the existing proof of authority consensus implemented in go-ethereum and defined in EIP 255. The reasons for this choice are severals. 
+The proposal is to use the existing proof of authority consensus implemented in go-ethereum and defined in EIP 225. The reasons for this choice are severals. 
 
-First, the golang implementation represents a large part of the production nodes (80% according to [ethernodes](https://www.ethernodes.org/)) and is known to be stable, close to the operating system (compiled language) and easy to deploy (no library).
+First, the golang implementation represents a large part of the production nodes (71% according to [ethernodes](https://www.ethernodes.org/) as of Feb 2023) and is known to be stable and maintained, close to the operating system (compiled language) and easy to deploy (no library).
 
-Then, the clique consensus is implemented and follows the EIP 255. This corresponds well to the need of the node community that we wish to implement. The clique implementation is relatively simple to derive.
+Then, the clique consensus is implemented and follows the EIP 225. This corresponds well to the need of the node community that we wish to implement. The clique implementation is relatively simple to derive.
 
-Finally, despite the fact that the clique consensus by default does not reward nodes, the code to set the reward can be ispired from the ethash consensus.
+Finally, despite the fact that the clique consensus by default does not reward nodes, the code to set the reward can be inspired from the ethash consensus.
 
-For the rest, the implementation needs a smart contract, the PoCR consensus smart contract, that will exist in the genesis block at address `0x0000000000000000000000000000000000000100`. This smart contract will hold the states for the nodes and their carbon footprint, the auditors authorized addressed, the auditors pledged amount, and the various rules for the governance (CRIPs, votes ...).
+For the governance, the implementation needs a smart contract, the PoCR consensus smart contract, that will exist in the genesis block at address `0x0000000000000000000000000000000000000100`. This smart contract will hold the states for the nodes and their carbon footprint, the auditors authorized addressed, the auditors pledged amount, and the various rules for the governance (CRIPs, votes ...). 
 
 For the reward and fee calculation, the PoCR governance smart contract holds $F(n)$, the carbon footprint of node $n$. The  $M$ value, the total amount of crypto created is held in address `0x0000000000000000000000000000000000000101`.    
 
 At the time of sealing a block (`FinalizeAndAssemble()`) or at the time of verifying the block from another node (`Finalize()`), the engine will call a new method `blockPostProcessing()` that will
-- ignore the reward calculation for the genesis block
+- ignore the reward calculation for the genesis block (block 0)
 - identify the current block sealer address $n$ from the in memory or in block snapshot
-- extract from the PoCR governance smart contract $N$, $F(n)$, $B_F(n)$, $F(k), k ∈ [1, N]$, $M$ 
+- extract from the PoCR governance smart contract the values $N$, $F(n)$, $B_F(n)$, $F(k), k ∈ [1, N]$, $M$ 
 - if $N$ is zero, no reward is given and the log shows that no node is recorded yet
-- if $F(n)$ is zero, no reward is given and the log shows that the node has no carbon footprint yet
+- if $F(n)$ is zero, no reward is given and the log shows that the sealer has no carbon footprint yet
 - calculates the ranking of the node $n$ taking in consideration audit age penalty
 - calculates the $CarbonReduction(N, F(n), F(k))$ is calculated
 - calculates the $AcceptNewSealers(N)$ : equals $N$
 - calculates the $GlobalInflationControl(M)$ 
 - the 3 values are multiplied using big int and added to the sealer balance and to the the smart contract balance and the $MinReward()$ is compared to the result to ensure that a minimum CRC creation is generated.
-- The Transaction fees are recalculated according to the node ranking and any over perceived fees are removed from the sealer and burnt, adjusting the total crypto generated $M$.
+- The Transaction fees are adjusted according to the node ranking and any over perceived fees are removed from the sealer and burnt, also adjusting the total crypto generated $M$.
 - The actual sealers in this new block, as per the clique consensus are synchronized in the Governance smart contract so the actual number of nodes and actual allowed nodes are correct for the smart contract logic.
 
 The rest of the governance logic is classical smart contract logic that does not intervene in the reward mechanism and that can rely on the normal property of the EVM.
@@ -381,8 +385,7 @@ In all calculations defined in this paper the implementations should use big int
 
 ## 9. Attack vectors and remediations
 
-From the EIP 255 (Clique) the same attack vectors exists. 
-**To be completed**
+From the EIP 225 (Clique) the same attack vectors exists. 
 
 ### 9.1. Governance takeover
 It is technically possible that half of the node operators becomes controlled by a single actor who decides to exclude other nodes and become the sole or majority decider of the network. 
@@ -403,7 +406,7 @@ Also, this attack cannot be anonymous since all sealers' identity are known, the
 
 ## 10. Opening to the community
 
-The design of any public network is necessary public and open to anyone to understand, review and propose improvement.    
+The design of any public blockchain network is necessary public and open to anyone to understand, review and propose improvement.    
 
 The intention of the initiators of this network is to progressively let new node operators and new auditors join the community and participate to its governance.
 
