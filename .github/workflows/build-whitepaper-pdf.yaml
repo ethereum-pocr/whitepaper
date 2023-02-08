@@ -1,0 +1,29 @@
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://pandoc/latex
+        with:
+          args: >-  # allows you to break string into multiple lines
+            --pdf-engine=xelatex 
+            --variable "geometry=margin=1.2in" 
+            --variable fontsize=12pt 
+            --variable version=2.0 
+            whitepaper.md  
+            -o whitepaper.pdf
+
+      - name: publish whitepaper latest version
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ github.token }}
+          file: whitepaper.pdf
+          asset_name: whitepaper.pdf
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "generated whitepaper.pdf"

@@ -1,6 +1,7 @@
-*Author: Guénolé de Cadoudal - for Credit Agricole CIB (CACIB) and Skandinaviska Enskilda Banken (SEB) - 2023*
+*Author: Guénolé de Cadoudal - for Credit Agricole CIB (CACIB) and Skandinaviska Enskilda Banken (SEB) - February 2023*
 
-# Proof of Carbon Reduction Whitepaper
+
+# Proof of Carbon Reduction whitepaper
 
 2021 has seen an increase of the financial sector adoption of the public blockchains to host financial instruments and to operate their ownership transfer against cash instruments (CBDC, Stable coins ...).
 
@@ -77,7 +78,7 @@ The methodology is created by APL Data center and relies on the [NEGA OCTET](htt
 
 As an abstract, let's consider the below diagram.
 
-<img src="./images/APL%20Methodology%20-%20figure%201.png" width="100%">
+![Carbon Footprint Methodology](./images/APL%20Methodology%20-%20figure%201.png)
 
 A node operator, in charge of the IT infrastructure needed to run its node in the network, will identify and provide the listed inputs (Datacenter elements and IT Equipment data) to the Auditor. The Auditor will apply the allocation rules and the indicators from the environmental database (Nega Octet) to calculate the environmental impacts in terms of the four indicators ($C0_2$ emission, depletion of natural resources, primary energy consumption and water resource depletion). These indicators are then normalized and added together to form the Carbon Footprint of the node whose value has no unit but faciliate the comparison accross the nodes. 
 
@@ -150,17 +151,17 @@ To be noted that the value $F(n)$ is a positive number (any carbon compensation 
 ### 5.2. The `CarbonReduction` base reward
 
 The above ranking logic places each node in a cohort of nodes based on the quality of its carbon footprint (a value expressed in integer with no unit with no decimals).   
-The node with a very good carbon footprint should be receiving a larger premium than one with a good one who in turn receives a better premium than some node with a average or even bad footprint. The intention is not to make this additional footprint linear since in technology, important breakthrough are often much more difficult to get than incremental improvement. Therefore an exponential decay curve $f(r) = ⍺^r$ seams adequate, where $0 < ⍺ < 1$ and $r ∈ ℕ$, is the rank $R(n)$ of the node $n$ in the cohort with integer values $R(n) ∈ [0, N-1]$ and $N$ is the number of nodes.
+The node with a very good carbon footprint should be receiving a larger premium than one with a good one who in turn receives a better premium than some node with a average or even bad footprint. The intention is not to make this additional footprint linear since in technology, important breakthrough are often much more difficult to get than incremental improvement. Therefore an exponential decay curve $f(r) = \alpha^r$ seams adequate, where $0 < \alpha < 1$ and $r ∈ ℕ$, is the rank $R(n)$ of the node $n$ in the cohort with integer values $R(n) ∈ [0, N-1]$ and $N$ is the number of nodes.
 
 We define the Carbon Reduction Factor, $CRF(n)$, as 
 
-$$ CRF(n) = ⍺^{R(n)} $$
+$$ CRF(n) = \alpha^{R(n)} $$
 
-We set $⍺=0.9$ as an assumption that the number of nodes in the network will be around 40 to 50. 
+We set $\alpha=0.9$ as an assumption that the number of nodes in the network will be around 40 to 50. 
 
-<img src="./images/CRF-function-2.png" width="100%">
+![Carbon Reduction Factor - variations](./images/CRF-function-2.png)
 
-In the diagram, the abscissa axe shows the rank $R(n)$, and displays two other options with $⍺=0.8$ and $⍺=0.95$. The ordinate axe show the result of $⍺$ raised at the power of $R(n)$.     
+In the diagram, the abscissa axe shows the rank $R(n)$, and displays two other options with $\alpha=0.8$ and $\alpha=0.95$. The ordinate axe show the result of $\alpha$ raised at the power of $R(n)$.     
 
 Since $R(n) ∈ ℕ$, $0.9^{R(n)}$ can be calculated as a quotien of integers as follow
 
@@ -218,7 +219,7 @@ $$ f_{b+1} = {1 \over { 2^{M_b / {10^6 } } }}$$
 Where $/$ symbol is the continuous division and $M_b$ the quantity of CRC created at block $b$.   
 Because in computing calculation the continuous division produces floating values that depending on implementation language, compilers and processors may not gives exactly the same rounding, it is not possible to ensure consistent results accross all nodes and therefore validate the blocks efficiently. So to cover this issue, we will use the limited development formula of the $e^x$ function adjusted for $2^x$.
 
-<img src="./images/reduction-factor.png" width="100%">
+![Reduction Factor in limited development](images/reduction-factor.png)
 
 So, 
 
@@ -226,7 +227,7 @@ $$ f_{b+1} = {1 \over { { 1 + { 0.72M_b \over 10^6} + { [{0.72M_b \over 10^6}]^2
 
 Simulation shows that with this regime it will take 20 years to reach 10 million ₡ with 35 nodes, most joining in the first 5 years. 
 
-2. To cover for the *Irretrievably Lost* tokens ([estimated at 4% of the total supply every year](https://static1.squarespace.com/static/5d580747908cdc0001e6792d/t/5e98dde5558a587a09fac0cc/1587076583519/research+note+4.17.pdf) in bitcoin) we propose to set a minimum cap at 100 000 ₡ created per year or 0,01268... ₡ per block that represents 1% of the 10M₡. 
+1. To cover for the *Irretrievably Lost* tokens ([estimated at 4% of the total supply every year](https://static1.squarespace.com/static/5d580747908cdc0001e6792d/t/5e98dde5558a587a09fac0cc/1587076583519/research+note+4.17.pdf) in bitcoin) we propose to set a minimum cap at 100 000 ₡ created per year or 0,01268... ₡ per block that represents 1% of the 10M₡. 
 
 Finally:
 
@@ -236,7 +237,7 @@ $$ MinReward() = {100,000 ₡\over {365 * 24 * 3600 / 4} }$$
 
 The chart represents the total amount of crypto created by years with 30 nodes joining in the first 5 years and the total number of nodes reaching 40 after 20 years 
 
-<img src="./images/crypto-total-2.png" width="400px">
+![Simulation of CRC supply curve](images/crypto-total-2.png)
 
 In the implementation of the consensus it is necessary to store the total quantity of CRC generated after each block to have the value $M_b$ in the formula of $f_{b+1}$.   
 This information is stored in the chain state at address `0x0000000000000000000000000000000000000101` and key `keccak256('GeneratedPocRTotal')` = `0x7811a2bc735fc5403fbfc32e2acc5672667b529348616ff7d9fbcfb25c7d529a`.    
@@ -333,9 +334,9 @@ Once this new audit is done $B$ becomes $B+\delta$ and $M$ becomes $P$ and the n
 
 This scheme implies that to satisfy an increasing number of clients over the same period of 3 months the auditor must pledge a larger amount. This designs a sort of "capital requirement" for the auditor that increase with the frequency of audit and therefore the quantity of business it does.      
 
-The below diagram represents an example where an auditor perform several audits (▲) over a period of 5 million blocks. The blue bars represents the amount pledged at the block. The red line shows how the minimum pledge amount evolves over time. For instance, at block 4 700 000 the pledge was fully amortized so the minimum amount is only 5.000 ₡ and the auditor was able to redeem its pledge before performing the next audit. Another instance, at block 500 000, because of previous audit the pledge amount is 5 000₡, since block 50, then the minimum pledge calculates as $ 8.731₡ = 5.000₡ * (500000-50)/ 1971000 + 5.000₡ $, hence the auditor only needs to pledge an additional 3.731₡ to be able to perform the next audit.
+The below diagram represents an example where an auditor perform several audits ($\triangle$) over a period of 5 million blocks. The blue bars represents the amount pledged at the block. The red line shows how the minimum pledge amount evolves over time. For instance, at block 4 700 000 the pledge was fully amortized so the minimum amount is only 5.000 ₡ and the auditor was able to redeem its pledge before performing the next audit. Another instance, at block 500 000, because of previous audit the pledge amount is 5 000₡, since block 50, then the minimum pledge calculates as $8.731₡ = 5.000₡ * (500000-50)/ 1971000 + 5.000₡$, hence the auditor only needs to pledge an additional 3.731₡ to be able to perform the next audit.
 
-<img src="./images/auditor-pledge.png" width="100%">
+![Example of an auditor pledge history](images/auditor-pledge.png)
 
 When an auditor is excluded by the community, the amount pledged by that auditor is confiscated. The community of nodes can decide to use the funds confiscated by the excluded auditors as they see fit by voting at $N/2+1$ like in a multi-sig wallet.
 
@@ -406,7 +407,7 @@ Also, this attack cannot be anonymous since all sealers' identity are known, the
 
 ## 10. Opening to the community
 
-The design of any public blockchain network is necessary public and open to anyone to understand, review and propose improvement.    
+The design of any public blockchain #network is necessary public and open to anyone to understand, review and propose improvement.    
 
 The intention of the initiators of this network is to progressively let new node operators and new auditors join the community and participate to its governance.
 
