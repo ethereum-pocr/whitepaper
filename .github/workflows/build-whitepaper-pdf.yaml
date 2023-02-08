@@ -27,3 +27,13 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "generated whitepaper.pdf"
+
+      - name: Save the pdf to the repo
+        run: |
+          git config --global --add safe.directory '*'
+          git config --global user.email "${{ github.actor }}@runner.org"
+          git config --global user.name "${{ github.actor }}"
+          git checkout -b pdf
+          git add whitepaper.pdf
+          git commit -m "update the whitepaper pdf"
+          git push -f origin pdf
