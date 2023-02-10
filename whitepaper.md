@@ -70,7 +70,7 @@ First, the research suggests that a large part (30 to 40%) of the environmental 
 
 Then, it is important that we can apply consistently the same assessment methodology across all nodes, across multiple data center and geography, and across time. Such a methodology must therefore be designed by experts in this field of the industry and follow a well recognized standard.   
 
-Typically, the carbon footprint of a node will be measured as a climatic impact indicator with multi-criteria indicators following the [IPCC 100 years methodology](https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg1-chapter2-1.pdf) and the [Life cycle assessment](https://eplca.jrc.ec.europa.eu/lifecycleassessment.html) approach and be expressed in $kg.CO_2$ equivalent and in accordance with the ISO 14040/44:2006 standard.
+Typically, the carbon footprint of a node will be measured with multi-criteria climatic impact indicators following the [IPCC 100 years methodology](https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg1-chapter2-1.pdf) and the [Life cycle assessment](https://eplca.jrc.ec.europa.eu/lifecycleassessment.html) approach and be expressed in $kg.CO_2$ equivalent and in accordance with the ISO 14040/44:2006 standard.
 
 The methodology defined for assessing the carbon footprint of a node is to be considered as a part of the whitepaper and must be adhered to by all nodes. The full documentation of the methodology is documented [here](./LCA%20assessment%20methodology%20-%20v1.0.pdf).
 
@@ -302,28 +302,62 @@ The monetary policy of the CRC is not defined by any particular actor. It is ini
 ### 8.1 Initialization
 The genesis of the project is the constitution of a blockchain that can serve the purpose of hosting a "green bond" issuance in a public blockchain by an issuer. 
 
-The blockchain, based on the Proof of Carbon Reduction consensus, as described above, has the potential of being usefull for many other use cases where sustainability is an important requirement. Also, the bond being issued will need to live its entire life onchain for 3 to 5 years which leads to the need to have the network last long enough.
+The blockchain, based on the Proof of Carbon Reduction consensus, as described above, has the potential of being useful for many other use cases where sustainability is an important requirement. Also, the bond being issued will need to live its entire life onchain for 3 to 5 years which leads to the need to have the network last long enough.
 
 In the long run, it is probably not the role of banks to be running the blockchain infrastructure but more probably to simply be users of such a shared infrastructure.
 
-Initially setup with 2 banks, the network will have 4 nodes in the consensus. Being based on a proof of authority scheme, the first node will need to be hard coded in the genesis block then the other invited. The second one by the first one; the third one by the 2 first ones ( $1/2 + 1$ ); the 4th one by at least 2 ( $3/2 +1$ ) of the 3 nodes; and so on with a logic of node N+1 being accepted by at least $N/2+1$ nodes.
+Initially setup with 2 banks, the network will have 4 nodes in the consensus. Being based on a proof of authority scheme, a single bootstrap node address will be hard coded in the genesis block then the other invited then the initial node removed. The bootstrap node will not receive any CRC.   
+The second node will be allowed by the bootstrap node; the third one by the 2 first ones ( $1/2 + 1$ ); Then the bootstrap node will be removed from the consensus. Then, the 4th node will be allowed by the 2 remaining ones ( $2/2 +1$ ); and the 5th by 2 out of the 3 nodes ($3/2 + 1$).
 
-Therefore a node willing to enter the consensus will need to make itself known to the community (see chapter 10) and get approved by at least half of the community.    
+Any consecutive node joining will have to be approved by at least $N/2 + 1$ nodes. So none of the two initial banks can decide alone who should join.
+
+### 8.2 Nodes  
+A node willing to enter the consensus will need to make itself known to the community and get approved by more than half of the community of nodes.    
 
 A node entering the consensus will also need to be given a carbon footprint by one of the authorized auditors. It can sollicit one or several auditors to get a quote to have its node assessed and can get this assessment done at any time before or after entering the consensus. But the node will only start earning new crypto units or transaction fees after both steps are performed (being enrolled in the consensus and being given a carbon footprint).
 
 Once a node is starting to earn crypto units it will naturally compare itself against the rest of the nodes to see if it can improve its setup and earn more crypto. It will then again sollicit auditors (the same or another one) to have new assessment of its node.
 
-### 8.2 Auditors 
+The process for a new node operator to join the consensus can be described as follow and all nodes already in the consensus are expected to accept this process as part of the principle of the consensus. This process can be amended with the a majority of the nodes and auditors (see 8.4 below)
+
+1. Candidate node operator will fill a form ([inside an issue](https://github.com/ethereum-pocr/pocrnet/issues/new/choose) ) that will be reviewed by existing node operators. The form should be complete enough so the candidate can be contacted and prove its identity via exposing its sealer address in a secure website.
+2. Each existing node operator are expected to carefully review the request and assess, in good faith, without a protective approach, the candidacy. The node operator will in particular 
+  * evaluate if the candidate is suitable for the purpose of running an infrastructure that runs regulated activities; 
+  * if there is a genuine motivation to support the growth of the network.  
+  * verify that the candidate is a company, not controlled by a company or person that also control another node
+  * verify that the identity of the company candidating is genuine (via a secure website page that is certified for the company)
+  * can ask question in the forum of the issue website to request clarification (transparency of the questions and answers are a sign of good faith)
+3. Each existing node operator will take its individual decision by submiting the `clique.propose("sealer address of the candidate", true)` command to its own node.
+  * All decisions should be applied in a period of one week, else all votes will need to be made again (this is to prevent never ending vote)
+  * Not agreeing to the candidate is done by not voting for the candidate
+  * Changing its vote is possible by submitting the `clique.propose("sealer address of the candidate", false)` command to its own node.
+4. Existing nodes that do not apply the selection process in good faith can be pointed out by the community and the candidate. In the extreme case a mis behaving node operator can be removed from the consensus by half of the participants.
+
+### 8.3 Auditors 
 Carbon footprint auditors have therefore a central role in the setup and must be carefully choosen by the community of the nodes. At the initialization, the banks will invite an initial single auditor to bootstrap the process.     
 The auditor will receive crypto units, precreated in the genesis block (including the necessary pledged amount - see below). With this the auditor will enroll itself as the first auditor in the PoCR governance smart contract initializing at the same time the mechanism for enlisting and excluding auditors.    
 
-When an auditor wants to be granted the possibility to perform an audit, it will make himself known to the community (see chapter 10) requesting to be approved by at least half of the nodes + 1. Concretely it means that the auditor will perform a self registration on the PoCR governance smart contract, giving its address, and wait to receive enough votes ( $N/2+1$ ) by nodes that have already been audited. Nodes can vote only once with the address of their node but can change their vote at any time. Several auditors can be awaiting authorization at the same period. Once an auditor receives the last vote (last positive vote out of the N/2+1) the auditor is added to the authorized list.    
+When an auditor wants to be granted the possibility to perform an audit, it will make himself known to the community requesting to be approved by at least half of the nodes + 1. Concretely it means that the auditor will perform a self registration on the PoCR governance smart contract, giving its address, and wait to receive enough votes ( $N/2+1$ ) by nodes that have already been audited. Nodes can vote only once with the address of their node but can change their vote at any time. Several auditors can be awaiting authorization at the same period. Once an auditor receives the last vote (last positive vote out of the N/2+1) the auditor is added to the authorized list.    
 
-An auditor enlisted can be excluded by the community if at least $N/2 + 1$ nodes decide to vote its address out at any point. Only nodes that have been audited and that have a carbon footprint can vote. Nodes can vote only once per auditors but can change their vote at any time. When the auditor has been voted away by at least $N/2+1$ nodes it is excluded from the authorized list making its capacity to set carbon footprint for nodes impossible.
+The process to follow for a new node auditor is similar to that of a new node operator. Nodes operators and auditors are expected to abide by this process as part of the principle of the consensus. This process can be amended with the a majority of the nodes and auditors (see 8.4 below)
 
-An auditor can capture the carbon footprint of a node if it has pledged in the PoCR governance smart contract a minimum amount of crypto unit as a guarantee to the community that any misconduct can be sanctionned. When voted out an auditor cannot take its pledge back. An auditor can take its pledge back if it has not done an audit for more than 3 months (1 971 000 blocks at 4sec per block $= Span$ ).    
-The amount that an auditor has to pledge should be substantial but also linked to the liability the auditor is taking. At the inception, since there is no crypto created yet, the amount should be preallocated to the first auditor (in the genesis block).     
+1. Candidate node auditor will fill a form ([inside an issue](https://github.com/ethereum-pocr/pocrnet/issues/new/choose) ) that will be reviewed by existing node operators. The form should be complete enough so the candidate can be contacted and prove its identity via exposing its auditor address in a secure website.
+2. Each existing node operator are expected to carefully review the request and assess, in good faith, without a protective approach, the candidacy. The node operator will in particular 
+  * evaluate if the candidate is suitable for the purpose of evaluating carbon footprint according to the defined methodology and the audit protocol; 
+  * if there is a genuine motivation to support the growth of the network.  
+  * verify that the candidate is a company, not controlled by a company or person that also control another node.
+  * verify that the identity of the company candidating is genuine (via a secure website page that is certified for the company)
+  * can ask question in the forum of the issue website to request clarification (transparency of the questions and answers are a sign of good faith)
+1. Each existing node operator will take its individual decision by submiting on the governance smart contract the `voteAuditor("address of the auditor", true)` transaction to the network signed by the sealer address or a delegate address.
+  * Not agreeing to the candidate is done by not voting for the candidate
+  * Changing its vote is possible by submitting the `voteAuditor("address of the auditor", false)` transaction.
+1. Existing nodes that do not apply the selection process in good faith can be pointed out by the community and the candidate. In the extreme case a mis behaving node operator can be removed from the consensus by half of the participants.
+
+An auditor enlisted can be excluded by the community if at least $N/2 + 1$ nodes decide to vote its address out at any point (with the same transaction as above). Only nodes that have been audited and that have a carbon footprint can vote. Nodes can vote only once per auditors but can change their vote at any time. When the auditor has been voted away by at least $N/2+1$ nodes it is excluded from the authorized list making its capacity to set carbon footprint for nodes impossible.
+
+An auditor can capture the carbon footprint of a node if it has pledged in the PoCR governance smart contract a minimum amount of CRC as a guarantee to the community that any misconduct can be sanctionned. When voted out an auditor cannot take its pledge back. An auditor can take its pledge back if it has not done an audit for more than 3 months (1 971 000 blocks at 4sec per block $= Span$ ).    
+The amount that an auditor has to pledge should be substantial but also linked to the liability the auditor is taking. At the inception, since there is no crypto created yet, the amount should be preallocated to the first auditor (in the genesis block).    
+
 A minimum amount $M_0 = 5.000 ₡$ should be secured for any new node assessment. The minimum amount necessary will decrease proportionally with the age of the last audit for the following 3 months. Specifically, if the auditor has last audited a node at the block $B$ and had an existing  pledge $M$, when it wants to audit a node at block $B+\delta$ then it must have at least 
 
 $$ P = M * (1 - {\delta \over Span}) + M_0 ; \space when \space \delta < Span$$ 
@@ -340,7 +374,7 @@ The below diagram represents an example where an auditor perform several audits 
 
 When an auditor is excluded by the community, the amount pledged by that auditor is confiscated. The community of nodes can decide to use the funds confiscated by the excluded auditors as they see fit by voting at $N/2+1$ like in a multi-sig wallet.
 
-### 8.3 Changes requests "Carbon Reduction Improvement Proposals"
+### 8.4 Changes requests "Carbon Reduction Improvement Proposals"
 Change in the consensus or the governance model can be agreed by the community by first having the change documented in the form of a memorandum posted in the community tool at https://github.com/ethereum-pocr/CRIPs (via pull request) and voted upon (positive or negative) by a majority +1 of voting nodes and a majority +1 of voting auditors. 
 
 Both communities (nodes and auditors) should express their approval independantly to prevent changes that penalize one community against the other. 
@@ -348,7 +382,7 @@ Both communities (nodes and auditors) should express their approval independantl
 Changes will be published as CRIP (Carbon Reduction Improvement Proposal) in a form very similar to [Ethereum EIP](https://ethereum.org/en/eips). They will be discussed by the community and put to vote after a minimum of 3 months (1 971 000 blocks of 4 secs) and for a maximum duration for voting of 1 month (657 000 blocks of 4 secs).
 
 
-## 8. Implementing the consensus
+## 9. Implementing the consensus
 
 Important note: the consensus as defined in this whitepaper is not limiting implementation to any language or platform as to avoid concentration of responsibility and power. The below description intends to show the initial implementation.
 
@@ -384,11 +418,12 @@ The Governance smart contract code is available to all for review in [gihub](htt
 
 In all calculations defined in this paper the implementations should use big integer methodology instead of floating points approach. When large integers are to be divided, the calculation is maintained as a quotien of big integers and only resolved by the euclidian division as late as possible ignoring the remainder. 
 
-## 9. Attack vectors and remediations
+## 10. Attack vectors and remediations
 
-From the EIP 225 (Clique) the same attack vectors exists. 
+From the EIP 225 (Clique) the same attack vectors exists.   
+Some propositions are in progress to cover some of these cases.
 
-### 9.1. Governance takeover
+### 10.1. Governance takeover
 It is technically possible that half of the node operators becomes controlled by a single actor who decides to exclude other nodes and become the sole or majority decider of the network. 
 
 To mitigate that risk, nodes should be formally authenticated to a legal entity and the ownership control of that legal entity established prior to allowing its node in the consensus.     
@@ -397,7 +432,9 @@ Should a company with a sealer node be aquire by another that already has a node
 
 The community should therefore keep a close monitoring of the legal entities that own nodes and communicate on them to ensure an equilibrium of the decision power for the network.
 
-### 9.2. Exclusion of the best node operator
+Should such a situation occur that put at risk a business running on the network, the interested parties can create a hard fork of the chain, remove the undesired actor and continue their activity on their chain. If this is not desirable, it may be the last recourse. It could therefore end the initial chain which CRC value will quickly drop by lack of the community interest in a centralized controlled network.
+
+### 10.2. Exclusion of the best node operator
 It is possible for enough nodes to collude to decide to exclude the best node, earning more crypto than the others.
 
 If that happens the second best becomes the first and all nodes moves one rank up, earning a bit more. But it serve more the second node (CRF goes from 0.9 to 1) so the colluded parties (at least $N/2 +1$ nodes) will expect a retrocession, leaving the new first node having to share its extra earning.
@@ -405,7 +442,7 @@ If that happens the second best becomes the first and all nodes moves one rank u
 Also, this attack cannot be anonymous since all sealers' identity are known, therefore the collusion will appears to the rest of the network putting their reputation at risk. Auditors could play a policing function here by refusing to audit nodes that are not working fairly in this model.
 
 
-## 10. Opening to the community
+## 11. Opening to the community
 
 The design of any public blockchain #network is necessary public and open to anyone to understand, review and propose improvement.    
 
@@ -415,19 +452,14 @@ The community is governed by node operators and auditors each having a unique vo
 
 Joining the community is described in the community web site at https://github.com/ethereum-pocr.
 
-Candidate node operators will be expected to fill a form (inside an issue) that will be reviewed by the community of existing node operators and who will decide to allow the node operator address in the network (or not).
-
-Candidate auditors will be expected to fill a form (inside an issue) that will be reviewed by the community of node opertators and who will decide to vote the auditor in (or not).
-
 The tools of the community (websites, blockchain client, CRIPs repository and other repositories) need to be be maintained by a team of developpers. This team, will cooperate in an open source mode and will participate to the animation of the community. 
 
 The authors expects that the companies involved in the network, either as node operators or node auditors, will support or employ members of this team to provide stability and durability to the model.
 
-## 11. References
+## 12. References
 
 1. [The Energy Consumption of Blockchain Technology: Beyond Myth](https://link.springer.com/article/10.1007/s12599-020-00656-x)
 2. [Energy Footprint of Blockchain Consensus Mechanisms Beyond Proof-of-Work](https://arxiv.org/pdf/2109.03667.pdf)
 3. [Green-PoW: An Energy-Efficient Blockchain Proof-of-Work Consensus Algorithm](https://arxiv.org/pdf/2007.04086.pdf)
-4. [Intrinsec audit report of the governance smart contract]()
-
+4. [Intrinsec audit report of the governance smart contract](https://github.com/ethereum-pocr/whitepaper/blob/main/PoCR%20Governance%20smart%20contract%20audit%20-%20extract.pdf)
 5. [DIGITAL TECHNOLOGIES IN EUROPE:an environmental life cycle approach](https://www.greenit.fr/wp-content/uploads/2021/12/EU-Study-LCA-7-DEC-EN.pdf)
