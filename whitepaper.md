@@ -86,7 +86,7 @@ Typically, the environmental footprint of a node will be measured with multi-cri
 
 The methodology defined for assessing the environmental footprint of a node is to be considered as a part of the whitepaper and must be adhered to by all nodes. The full documentation of the methodology is documented here[^7].
 
-[^7]: https://github.com/ethereum-pocr/whitepaper/blob/main/LCA%20assessment%20methodology%20-%20v1.0.pdf
+[^7]: https://github.com/ethereum-pocr/whitepaper/blob/main/LCA%20assessment%20methodology%20-%20v1.1.pdf
 
 The methodology is created by APL Data center and relies on the NEGA OCTET[^8] database, a joint effort sponsored by the "Agence de l'Environnement et de la Maitrise de l'Energie" ADEME[^9].
 
