@@ -48,7 +48,7 @@ This whitepaper proposes a design for a new consensus that intends to incentiviz
 
 Nodes will make efforts in improving the environmental footprint of their IT infrastructure if they are given a financial incentive to do so.   
 The **Proof of Climate awaReness** consensus therefore aims at aligning the crypto token earning of a node operator with the quality of the environmental footprint of its infrastructure.   
-This implies that the nodes can prove the level of carbon emission of their infrastructure to the rest of the network in a trustable and public way.   
+This implies that the nodes can prove their impact on the environment of their infrastructure to the rest of the network in a trustable and public way.   
 
 The PoCR consensus intends to put the nodes in competition for a better environmental footprint such that **the lower the footprint, the higer the earning**, and the absence of progress on the environmental footprint would progressively reduce the earning as others becomes better.   
 
@@ -79,7 +79,7 @@ First, the research suggests that a large part (30 to 40%) of the environmental 
 
 Then, it is important that we can apply consistently the same assessment methodology across all nodes, across multiple data center and geography, and across time. Such a methodology must therefore be designed by experts in this field of the industry and follow a well recognized standard.   
 
-Typically, the environmental footprint of a node will be measured with multi-criteria climatic impact indicators following the IPCC 100 years methodology[^5] and the Life cycle assessment[^6] approach and be expressed in $kg.CO_2$ equivalent and in accordance with the ISO 14040/44:2006 standard.
+Typically, the environmental footprint of a node will be measured with multi-criteria climatic impact indicators following the IPCC 100 years methodology[^5] and the Life cycle assessment[^6] approach and be expressed in Environmental Footprint units and in accordance with the ISO 14040/44:2006 standard.
 
 [^5]: https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg1-chapter2-1.pdf
 [^6]: https://eplca.jrc.ec.europa.eu/lifecycleassessment.html
@@ -140,7 +140,7 @@ On this last element, controlling the block reward level based on the chain acti
 
 Based on the above discussion, the reward of block `b` for a node `n` will be made up of 3 parts to control the 3 incentives, a minimum token creation and the transaction fees: 
 
-$$ SealingReward(n,b) = CarbonReduction(n) * AcceptNewSealers() * GlobalInflationControl(b) $$
+$$ SealingReward(n,b) = BaseReward(n) * AcceptNewSealers() * GlobalInflationControl(b) $$
 
 $$ Reward(n, b) = Max(SealingReward(n,b),MinReward()) + TransactionFees(b, n) $$
 
@@ -152,7 +152,9 @@ Without an auditor setting the environmental footprint, $F_a(n)$, then $F_a(n)=0
 In order to apply a penalty on nodes that are not regularly audited (once a year), the environmental footprint actually used for the rest of the consensus is adjusted by applying a 5% increase per years without audit.
 
 $$ N_{year}(n) = {b - B_F(n) \over (3600 / 4) * 24 * 365}$$
+
 Where $b$ is the current block number, the divider represents a year worth of blocks and the division used is the euclidian integer division, implying that less than a year gives $N_{year}(n) = 0$. Then,
+
 $$F(n) = F_a(n) . { 100 + 5.N_{year}(n) \over 100} $$
 
 
@@ -167,7 +169,7 @@ If there are equality between $p$ nodes they will have the same rank $r$ but the
 
 To be noted that the value $F(n)$ is a positive number (any carbon compensation setup would be ignored and an assessment of environmental footprint that would be negative wouldn't make sense). A node with a zero environmental footprint is considered having not been audited and will not be included in the ranking nor will it receive any reward as a consequence.
 
-### 5.2. The `CarbonReduction` base reward
+### 5.2. The Environmental Footprint base reward
 
 The above ranking logic places each node in a cohort of nodes based on the quality of its environmental footprint (a value expressed in integer with no unit with no decimals).   
 The node with a very good environmental footprint should be receiving a larger premium than one with a good one who in turn receives a better premium than some node with a average or even bad footprint. The intention is not to make this additional footprint linear since in technology, important breakthrough are often much more difficult to get than incremental improvement. Therefore an exponential decay curve $f(r) = \alpha^r$ seams adequate, where $0 < \alpha < 1$ and $r ∈ ℕ$, is the rank $R(n)$ of the node $n$ in the cohort with integer values $R(n) ∈ [0, N-1]$ and $N$ is the number of nodes.
@@ -191,7 +193,8 @@ To ensure rounding as late as possible in the computer calculation and applying 
 [^11]: https://en.wikipedia.org/wiki/Euclidean_division
 
 Finally, with $₡$ representing a unit of Climate awaReness Coin 
-$$CarbonReduction(n) = CRF(n) * 1 ₡$$
+
+$$BaseReward(n) = CRF(n) * 1 ₡$$
 
 ### 5.3. The `AcceptNewSealers` factor
 
@@ -209,8 +212,11 @@ Adding yet another node (total $N+2$ nodes), node $n$ will now earn $x * 1/(N+2)
 A node needs to earn a fixed amount per unit of time as its operating costs will be stable in time regardless of the number of nodes. Since the earning is only delivered when the node seals a block, the block reward should deliver the same quantity independantly of the number of nodes. So $E_N(n, b)$ being the earning of node $n$ at block $b$ with $N$ nodes we have the equality
 
 $$ E_N(n, b) = E_{N+k}(n,b) $$
+
 $$ \equiv { AcceptNewSealers_N()*x \over N} = { AcceptNewSealers_{N+k}()* x \over {N+k}} $$
+
 This is only possible if $AcceptNewSealers()$ is the actual number of nodes $N$ and $N+k$
+
 $$ \equiv { N*x \over N} = { (N+k)* x \over {N+k}} $$
 
 Conclusion:
@@ -437,7 +443,7 @@ At the time of sealing a block (`FinalizeAndAssemble()`) or at the time of verif
 - if $N$ is zero, no reward is given and the log shows that no node is recorded yet
 - if $F(n)$ is zero, no reward is given and the log shows that the sealer has no environmental footprint yet
 - calculates the ranking of the node $n$ taking in consideration audit age penalty
-- calculates the $CarbonReduction(N, F(n), F(k))$ is calculated
+- calculates the $BaseReward(N, F(n), F(k))$ is calculated
 - calculates the $AcceptNewSealers(N)$ : equals $N$
 - calculates the $GlobalInflationControl(M)$ 
 - the 3 values are multiplied using big int and added to the sealer balance and to the the smart contract balance and the $MinReward()$ is compared to the result to ensure that a minimum CRC creation is generated.
