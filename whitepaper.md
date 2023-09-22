@@ -1,5 +1,5 @@
 # Proof of Climate awaReness whitepaper
-*Author: Guénolé de Cadoudal - for Credit Agricole CIB and Skandinaviska Enskilda Banken - March 2023*   
+*Author: Guénolé de Cadoudal - March 2023*   
 ![](images/pocr-small.png)
 
 
